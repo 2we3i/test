@@ -12,6 +12,7 @@
 
 ## Структура проекта
 ```
+```
 discord-messages/
 
 ├── templates/
@@ -22,7 +23,7 @@ discord-messages/
 ├── data.json
 ├── requirements.txt
 └── README.md
-
+```
 ```
 
 ## Требования
