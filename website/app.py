@@ -11,8 +11,11 @@ INVITE_LINK = os.getenv('INVITE_LINK')
 
 @app.route('/')
 def index():
-    with open('data.json', 'r') as f:
-        data = json.load(f)
+    try:
+        with open('../data.json', 'r') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        data = {"messages": [], "online_count": 0}
     return render_template('index.html', 
                           messages=data["messages"], 
                           online_count=data["online_count"], 
