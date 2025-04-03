@@ -13,14 +13,23 @@
 ## Структура проекта
 ```
 discord-messages/
+
 ├── templates/
+
 │   └── index.html
+
 ├── .env
+
 ├── bot.py
+
 ├── app.py
+
 ├── data.json
+
 ├── requirements.txt
+
 └── README.md
+
 ```
 
 ## Требования
