@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Messages</title>
+    <style>
+        body {
+            background-color: #2c2c2c;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        #news-header {
+            background-color: #007BFF;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px 10px 0 0;
+        }
+        #messages {
+            max-width: 6000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            overflow-y: auto;
+            max-height: 500px;
+            position: relative;
+        }
+        #messages::-webkit-scrollbar {
+            width: 8px;
+        }
+        #messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #messages::-webkit-scrollbar-thumb {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+        .message {
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: #3a3a3a;
+            border-radius: 10px;
+        }
+        #no-messages {
+            text-align: center;
+            font-style: italic;
+            color: #ccc;
+        }
+        .join-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7289DA;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .join-button:hover {
+            background-color: #5a6eb3;
+        }
+        .online-count {
+            font-size: 16px;
+            color: #00FF00;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="news-header">НОВОСТИ</div>
+    <div id="messages">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message">{{ message }}</div>
+            {% endfor %}
+        {% else %}
+            <div id="no-messages">Сообщений пока нет</div>
+        {% endif %}
+        <a href="{{ invite_link }}" class="join-button">Присоединиться</a>
+        <div class="online-count">Онлайн: {{ online_count }}</div>
+    </div>
+</body>
+</html>
