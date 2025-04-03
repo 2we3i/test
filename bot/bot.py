@@ -19,8 +19,8 @@ intents.members = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Инициализация JSON-файла
-if not os.path.exists('data.json'):
-    with open('data.json', 'w') as f:
+if not os.path.exists('../data.json'):
+    with open('../data.json', 'w') as f:
         json.dump({"messages": [], "online_count": 0}, f)
 
 @bot.event
@@ -31,7 +31,7 @@ async def on_ready():
 async def on_message(message):
     # Проверяем, что сообщение из нужного канала
     if message.channel.id == CHANNEL_ID:
-        with open('data.json', 'r') as f:
+        with open('../data.json', 'r') as f:
             data = json.load(f)
         
         # Обновляем сообщения
@@ -44,7 +44,7 @@ async def on_message(message):
         data["online_count"] = online_count
         
         # Сохраняем данные
-        with open('data.json', 'w') as f:
+        with open('../data.json', 'w') as f:
             json.dump(data, f)
 
 bot.run(TOKEN)
