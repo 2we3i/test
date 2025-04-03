@@ -1,16 +1,7 @@
-import json
-
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return  # Игнорируем сообщения бота
-
-    data = {"author": message.author.name, "content": message.content}
-
-    # Сохраняем в JSON-файл
-    with open("data.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
-
-    print(f"Сообщение записано: {data}")  # Для отладки
-
-    await bot.process_commands(message)  # Чтобы команды работали
+{
+    "messages": [
+        {"author": "User1", "content": "Привет!"},
+        {"author": "User2", "content": "Как дела?"}
+    ],
+    "online_count": 5
+}
