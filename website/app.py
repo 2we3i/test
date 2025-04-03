@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Загружаем переменные из .env
 load_dotenv()
-INVITE_LINK = os.getenv('https://discord.gg/your_invite_link_here')
+INVITE_LINK = os.getenv('https://discord.gg/hmeQtkqGwE')
 
 @app.route('/')
 def index():
