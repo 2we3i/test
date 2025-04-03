@@ -1,7 +1,7 @@
 import os
 
 # Определяем путь до data.json
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Находим путь к website/
+BASE_DIR = os.path.dirname(os.path.abspath(website/templates/index.html))  # Находим путь к website/
 DATA_PATH = os.path.join(BASE_DIR, "../data.json")  # Подключаем data.json
 
 @app.route('/')
