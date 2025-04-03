@@ -13,8 +13,8 @@ CHANNEL_ID = int(os.getenv('CHANNEL_ID'))  # ID канала как целое �
 
 # Настраиваем intents
 intents = discord.Intents.default()
-# intents.message_content = True
-intents.members = True
+intents.members = True  # Доступ к участникам
+intents.message_content = True  # Чтение сообщений
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
